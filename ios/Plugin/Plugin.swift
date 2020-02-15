@@ -14,10 +14,22 @@ public class CapContacts: CAPPlugin {
     
     @objc func echo(_ call: CAPPluginCall) {
         print("Echo was triggered")
-        let value = call.getString("value") ?? ""
-        call.success([
-            "value": value
-        ])
+//        let value = call.getString("value") ?? ""
+//        call.success([
+//            "allowed": value
+//        ])
+        Permissions.contactPermission { permission in
+            switch permission {
+            case true:
+                call.success([
+                    "allowed": "true"
+                ])
+            default:
+                call.success([
+                    "allowed": "false"
+                ])
+                }
+            }
     }
     
     @objc func storeContact(_ call: CAPPluginCall) {
