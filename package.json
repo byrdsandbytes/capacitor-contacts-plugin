@@ -1,0 +1,50 @@
+{
+  "name": "@byrds/capacitor-contacts",
+  "version": "0.0.1",
+  "description": "A capacitor plugin to fetch contacts",
+  "main": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rimraf ./dist",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Byrds & Bytes Gmbh / Idrimi / Jonathan Gerber",
+  "license": "GPL v3",
+  "dependencies": {
+    "@capacitor/core": "latest"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.0",
+    "typescript": "^3.2.4",
+    "@capacitor/ios": "latest",
+    "@capacitor/android": "latest"
+  },
+  "files": [
+    "dist/",
+    "ios/",
+    "android/",
+    "ByrdsCapacitorContacts.podspec"
+  ],
+  "keywords": [
+    "capacitor",
+    "plugin",
+    "native"
+  ],
+  "capacitor": {
+    "ios": {
+      "src": "ios"
+    },
+    "android": {
+      "src": "android"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/byrdsandbytes/capacitor-contacts-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/byrdsandbytes/capacitor-contacts-plugin.git/issues"
+  }
+}
