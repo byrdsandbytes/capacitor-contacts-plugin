@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Plugin.swift">
+      location = "group:/Users/jonathangerber/Apps/capacitor/capacitor-contacts/ios/Plugin/Plugin.swift">
    </FileRef>
    <FileRef
       location = "group:Plugin.xcodeproj">

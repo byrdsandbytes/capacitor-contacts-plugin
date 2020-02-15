@@ -21,6 +21,42 @@ export class CapContactsWeb extends WebPlugin {
             return options;
         });
     }
+    getPermissions() {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log('REQUEST_PERMISSIONS', 'called');
+            return {};
+        });
+    }
+    getContacts() {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log('GET_CONTACTS', 'called');
+            return { contacts: [] };
+        });
+    }
+    getGroups() {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log('GET_GROUPS', 'called');
+            return { groups: [] };
+        });
+    }
+    getContactGroups() {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log('GET_CONTACT_GROUPS', 'called');
+            return {};
+        });
+    }
+    deleteContact(options) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log('DELETE_CONTACT', options);
+            return {};
+        });
+    }
+    storeContact() {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log("StoreContactTrigerred");
+            return {};
+        });
+    }
 }
 const CapContacts = new CapContactsWeb();
 export { CapContacts };
