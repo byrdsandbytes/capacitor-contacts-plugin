@@ -1,10 +1,14 @@
+//
+//  Plugin.swift
+//  
+//
+//  Created by Jonathan Gerber on 15.02.20.
+//  © Byrds & Bytes GmbH - Jonathan Gerber
+
 import Foundation
 import Capacitor
 
-/**
- * Please read the Capacitor iOS Plugin Development Guide
- * here: https://capacitor.ionicframework.com/docs/plugins/ios
- */
+
 @objc(CapContacts)
 public class CapContacts: CAPPlugin {
     
@@ -15,3 +19,4 @@ public class CapContacts: CAPPlugin {
         ])
     }
 }
+
