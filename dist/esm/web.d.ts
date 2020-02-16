@@ -7,6 +7,7 @@ export declare class CapContactsWeb extends WebPlugin implements CapContactsPlug
     }): Promise<{
         value: string;
     }>;
+    checkPermissions(): Promise<any>;
     getPermissions(): Promise<any>;
     getContacts(): Promise<{
         contacts: Array<any>;

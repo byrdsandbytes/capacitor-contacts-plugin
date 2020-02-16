@@ -9,6 +9,9 @@ export interface CapContactsPlugin {
     }): Promise<{
         value: string;
     }>;
+    checkPermissions(): Promise<{
+        value: string;
+    }>;
     getPermissions(): Promise<any>;
     getContacts(): Promise<{
         contacts: Array<any>;

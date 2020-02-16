@@ -5,5 +5,6 @@
 // each method the plugin supports using the CAP_PLUGIN_METHOD macro.
 CAP_PLUGIN(CapContacts, "CapContacts",
            CAP_PLUGIN_METHOD(echo, CAPPluginReturnPromise);
-           CAP_PLUGIN_METHOD(checkPermission, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(checkPermissions, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getContacts, CAPPluginReturnPromise);
 )

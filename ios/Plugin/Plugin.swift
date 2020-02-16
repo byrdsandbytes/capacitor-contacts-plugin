@@ -19,20 +19,31 @@ public class CapContacts: CAPPlugin {
             "allowed": value
         ])
     }
-    @objc func checkPermission(_ call: CAPPluginCall) {
+    @objc func checkPermissions(_ call: CAPPluginCall) {
         print("checkPermission was triggered in Swift")
         Permissions.contactPermission { permission in
             switch permission {
             case true:
                 call.success([
-                    "allowed": "true"
+                    "allowed": true
                 ])
             default:
                 call.success([
-                    "allowed": "false"
+                    "allowed": false
                 ])
                 }
             }
     }
+    @objc func getContacts(_ call: CAPPluginCall) {
+        let contacts = Contacts.getContactFromCNContact()
+        for contact in contacts {
+            print(contact.middleName)
+            print(contact.familyName)
+            print(contact.givenName)
+        }
+        
+    }
+    
+    
 }
 

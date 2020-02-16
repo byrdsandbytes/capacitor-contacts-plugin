@@ -21,6 +21,12 @@ export class CapContactsWeb extends WebPlugin {
             return options;
         });
     }
+    checkPermissions() {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log('Check Permission in WEB.TS');
+            return {};
+        });
+    }
     getPermissions() {
         return __awaiter(this, void 0, void 0, function* () {
             console.log('REQUEST_PERMISSIONS', 'called');
