@@ -7,6 +7,7 @@
 
 import Foundation
 import Capacitor
+import SwiftyJSON
 
 
 @objc(CapContacts)
@@ -36,6 +37,8 @@ public class CapContacts: CAPPlugin {
     }
     @objc func getContacts(_ call: CAPPluginCall) {
         let contacts = Contacts.getContactFromCNContact()
+        let json = JSON(contacts)
+        print(json)
         for contact in contacts {
             print(contact.middleName)
             print(contact.familyName)

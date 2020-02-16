@@ -2,10 +2,16 @@ PODS:
   - Capacitor (1.5.0):
     - CapacitorCordova (= 1.5.0)
   - CapacitorCordova (1.5.0)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - "Capacitor (from `../node_modules/@capacitor/ios`)"
   - "CapacitorCordova (from `../node_modules/@capacitor/ios`)"
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - SwiftyJSON
 
 EXTERNAL SOURCES:
   Capacitor:
@@ -16,7 +22,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Capacitor: 667658ab58e5a2e8465238eef7c6c5df46738688
   CapacitorCordova: 5b03f0b903bf066a8f3187e848252227190b681a
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 18edf3816e869cc37578950affc00fdd78ee0dcb
+PODFILE CHECKSUM: b0fbdf0aa24b8b001dd1a91171c773f587521c28
 
 COCOAPODS: 1.8.4
