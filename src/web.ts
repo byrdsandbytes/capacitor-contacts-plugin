@@ -10,8 +10,12 @@ export class CapContactsWeb extends WebPlugin implements CapContactsPlugin {
   }
 
   async echo(options: { value: string }): Promise<{value: string}> {
-    console.log('ECHO', options);
+    console.log('ECHO in WEB.TS', options);
     return options;
+  }
+  async checkPermissions(): Promise<any> {
+    console.log('Check Permission in WEB.TS');
+    return {};
   }
 
    async getPermissions(): Promise<any> {

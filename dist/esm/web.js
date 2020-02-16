@@ -17,7 +17,7 @@ export class CapContactsWeb extends WebPlugin {
     }
     echo(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('ECHO', options);
+            console.log('ECHO in WEB.TS', options);
             return options;
         });
     }

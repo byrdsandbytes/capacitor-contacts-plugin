@@ -13,11 +13,14 @@ import Capacitor
 public class CapContacts: CAPPlugin {
     
     @objc func echo(_ call: CAPPluginCall) {
-        print("Echo was triggered")
-//        let value = call.getString("value") ?? ""
-//        call.success([
-//            "allowed": value
-//        ])
+        print("Echo was triggered in Swift")
+        let value = call.getString("value") ?? ""
+        call.success([
+            "allowed": value
+        ])
+    }
+    @objc func checkPermission(_ call: CAPPluginCall) {
+        print("checkPermission was triggered in Swift")
         Permissions.contactPermission { permission in
             switch permission {
             case true:
@@ -30,21 +33,6 @@ public class CapContacts: CAPPlugin {
                 ])
                 }
             }
-    }
-    
-    @objc func storeContact(_ call: CAPPluginCall) {
-      let name = call.getString("yourName") ?? "default name"
-      let address = call.getObject("address") ?? [:]
-      let isAwesome = call.getBool("isAwesome") ?? false
-
-      guard let id = call.options["id"] as? String else {
-        call.reject("Must provide an id")
-        return
-      }
-
-      // ...
-
-      call.resolve()
     }
 }
 

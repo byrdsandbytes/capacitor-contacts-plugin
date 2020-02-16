@@ -20,5 +20,7 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
+	<key>NSContactsUsageDescription</key>
+	<string>Access to Contacts needed.</string>
 </dict>
 </plist>
