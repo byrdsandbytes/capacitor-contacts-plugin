@@ -8,10 +8,13 @@ def capacitor_pods
 end
 
 target 'Plugin' do
+  use_frameworks!
   capacitor_pods
   pod 'SwiftyJSON', '~> 4.0'
 end
 
 target 'PluginTests' do
+  use_frameworks!
   capacitor_pods
+  pod 'SwiftyJSON', '~> 4.0'
 end
