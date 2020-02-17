@@ -15,11 +15,11 @@ class Contacts {
         let contactStore = CNContactStore()
         let keysToFetch = [
             CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
+            CNContactPhoneNumbersKey,
             CNContactGivenNameKey,
             CNContactMiddleNameKey,
             CNContactFamilyNameKey,
             CNContactEmailAddressesKey,
-            CNContactPhoneNumbersKey
             ] as [Any]
 
         //Get all the containers
