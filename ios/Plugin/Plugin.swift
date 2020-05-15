@@ -19,7 +19,7 @@ public class CapContacts: CAPPlugin {
             "allowed": value
         ])
     }
-    @objc func checkPermissions(_ call: CAPPluginCall) {
+    @objc func getPermissions(_ call: CAPPluginCall) {
         print("checkPermission was triggered in Swift")
         Permissions.contactPermission { permission in
             switch permission {
@@ -57,14 +57,7 @@ public class CapContacts: CAPPlugin {
                 "phoneNumbers": phoneNumbers,
                 "emails": emails
             ]
-            contactsArray.append(contactResult)
-            print("JS Result", jsResult)
-            print("contactResult", contactResult)
-            print(contact.middleName)
-            print(contact.familyName)
-            print(contact.givenName)
-            print(contact.phoneNumbers.first?.value.stringValue ?? "nA")
-            
+            contactsArray.append(contactResult)    
         }
         let data : PluginResultData = ["contacts": contactsArray]
         call.success(data)
