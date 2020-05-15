@@ -39,12 +39,27 @@ public class CapContacts: CAPPlugin {
         var contactsArray : [PluginResultData] = [];
         let contacts = Contacts.getContactFromCNContact()
         for contact in contacts {
-            let jsResult: PluginResultData = [
-                "lastName": contact.familyName,
-                "firstName": contact.givenName,
-                "phoneNumberRaw": contact.phoneNumbers.first?.value.stringValue ?? "nA",
+            var phoneNumbers: [String] = []
+            var emails: [String] = []
+            for number in contact.phoneNumbers {
+                let numberToAppend = number.value.stringValue
+                phoneNumbers.append(numberToAppend)
+                print(phoneNumbers)
+            }
+            for email in contact.emailAddresses {
+                let emailToAppend = email.value as String
+                emails.append(emailToAppend)
+            }
+            let contactResult: PluginResultData = [
+                "contactId": contact.identifier,
+                "lookupKey": contact.identifier,
+                "displayName": "\(contact.givenName) \(contact.familyName)",
+                "phoneNumbers": phoneNumbers,
+                "emails": emails
             ]
-            contactsArray.append(jsResult)
+            contactsArray.append(contactResult)
+            print("JS Result", jsResult)
+            print("contactResult", contactResult)
             print(contact.middleName)
             print(contact.familyName)
             print(contact.givenName)
