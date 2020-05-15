@@ -1,4 +1,4 @@
-package at.loveit.capacitorcontacts;
+package ch.byrds.capacitorcontacts;
 
 import android.Manifest;
 import android.database.Cursor;
@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.Set;
 
 @NativePlugin(permissionRequestCode = 1, permissions = {Manifest.permission.READ_CONTACTS, Manifest.permission.WRITE_CONTACTS})
-public class Contacts extends Plugin {
+public class CapContacts extends Plugin {
 
     public static final String CONTACT_ID = "contactId";
     public static final String EMAILS = "emails";
