@@ -2,6 +2,11 @@
 
 A native Capcitor plugin to manage phone contacts. Built for Angular hybrid apps.
 
+## Demo
+
+You can find a working Ionic App using the Byrds' Capacitor Contacts plugin here:
+https://github.com/byrdsandbytes/capContactsDemo
+
 ## Getting Started
 
 ### Prerequisites
@@ -49,13 +54,8 @@ You have the following Methods available:
 ```
 export interface CapContactsPlugin {
   echo(options: { value: string }): Promise<{value: string}>;
-  checkPermissions(): Promise<{value: string}>;
   getPermissions(): Promise<any>;
   getContacts(): Promise<{ contacts: Array<any> }>;
-  getGroups(): Promise<{ groups: Array<any> }>;
-  getContactGroups(): Promise<any>;
-  deleteContact(options: { lookupKey: string }): Promise<any>;
-  storeContact(): Promise<any>;
 }
 ```
 If you're considering to use this plugin you most likely want to retrive contatacts probably want to retrive a users contacts. Here's how I do that: 
@@ -102,11 +102,35 @@ We need access to your contacts in order to do something.
 
 ## Android Notes
 
-Coming soon. The Android Support is not fully tested yet.
+For Android you have to add the permision in you AndroidManifest.xml. Add the following permission before the closing of the "manifest" tag.
 
-## Electron Notes
+````
+<uses-permission android:name="android.permission.READ_CONTACTS" />
+<uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+````
 
-Coming soon. The Electron Support is not fully tested yet.
+Next import the capContacts class to your MainActivity
+
+`````
+// Initializes the Bridge
+    this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
+      // Additional plugins you've installed go here
+      // Ex: add(TotallyAwesomePlugin.class);
+      add(CapContacts.class);
+    }});
+`````
+
+Make sure to import it properly as well.
+
+``````
+import ch.byrds.capacitorContacts.CapContacts;
+``````
+
+**NOTE**: On Android you have to ask for permission first, before you can fetch the contacts. Use the `getPermissions()` method before you try to fetch contacts using `getContacts()`.
+
+
+
+
 
 ## Built With
 - Swift 5 
@@ -118,10 +142,8 @@ Coming soon. The Electron Support is not fully tested yet.
 -Idrimi (Jonathan Gerber)
 
 ## License
-
-GPL v3
-
+MIT
 ## Acknowledgments
 
-* For the java/Android side i took some inspiraton from Skrausler(https://github.com/skrausler)
+
 

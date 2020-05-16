@@ -1,6 +1,6 @@
 {
   "name": "@byrds/capacitor-contacts",
-  "version": "0.2.2",
+  "version": "1.0.2",
   "description": "A capacitor plugin to fetch contacts",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -11,7 +11,7 @@
     "prepublishOnly": "npm run build"
   },
   "author": "Byrds & Bytes Gmbh / Idrimi / Jonathan Gerber",
-  "license": "GPL v3",
+  "license": "MIT",
   "dependencies": {
     "@capacitor/core": "latest"
   },
