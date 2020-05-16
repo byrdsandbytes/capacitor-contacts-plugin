@@ -6,11 +6,8 @@ declare module "@capacitor/core" {
 
 export interface CapContactsPlugin {
   echo(options: { value: string }): Promise<{value: string}>;
-  checkPermissions(): Promise<{value: string}>;
   getPermissions(): Promise<any>;
-  getContacts(): Promise<{ contacts: Array<any> }>;
-  getGroups(): Promise<{ groups: Array<any> }>;
-  getContactGroups(): Promise<any>;
-  deleteContact(options: { lookupKey: string }): Promise<any>;
-  storeContact(): Promise<any>;
+  getContacts(): Promise<{
+      contacts: Array<any>;
+  }>;
 }

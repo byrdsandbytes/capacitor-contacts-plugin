@@ -17,50 +17,20 @@ export class CapContactsWeb extends WebPlugin {
     }
     echo(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('ECHO in WEB.TS', options);
+            console.log('ECHO', options);
             return options;
-        });
-    }
-    checkPermissions() {
-        return __awaiter(this, void 0, void 0, function* () {
-            console.log('Check Permission in WEB.TS');
-            return {};
         });
     }
     getPermissions() {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('REQUEST_PERMISSIONS', 'called');
-            return {};
+            console.log("GET PERMISSIONS");
+            return;
         });
     }
     getContacts() {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('GET_CONTACTS', 'called');
-            return { contacts: [] };
-        });
-    }
-    getGroups() {
-        return __awaiter(this, void 0, void 0, function* () {
-            console.log('GET_GROUPS', 'called');
-            return { groups: [] };
-        });
-    }
-    getContactGroups() {
-        return __awaiter(this, void 0, void 0, function* () {
-            console.log('GET_CONTACT_GROUPS', 'called');
-            return {};
-        });
-    }
-    deleteContact(options) {
-        return __awaiter(this, void 0, void 0, function* () {
-            console.log('DELETE_CONTACT', options);
-            return {};
-        });
-    }
-    storeContact() {
-        return __awaiter(this, void 0, void 0, function* () {
-            console.log("StoreContactTrigerred");
-            return {};
+            console.log("GET CONTACTS");
+            return;
         });
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@byrds/capacitor-contacts",
-  "version": "0.1.6",
+  "version": "0.2.2",
   "description": "A capacitor plugin to fetch contacts",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",

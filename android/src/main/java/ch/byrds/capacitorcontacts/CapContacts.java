@@ -1,4 +1,4 @@
-package ch.byrds.capacitorcontacts;
+package ch.byrds.capacitorContacts;
 
 import android.Manifest;
 import android.database.Cursor;
@@ -231,3 +231,4 @@ public class CapContacts extends Plugin {
     }
 
 }
+
