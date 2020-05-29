@@ -10,8 +10,7 @@ import Foundation
 import Contacts
 
 class Permissions {
-    // MARK: Contacts
-    
+
     class func contactPermission(completionHandler: @escaping (_ accessGranted: Bool) -> Void) {
         let contactStore = CNContactStore()
         switch CNContactStore.authorizationStatus(for: .contacts) {
@@ -31,8 +30,6 @@ class Permissions {
             }
         }
     }
-    
-    
 }
 
 
