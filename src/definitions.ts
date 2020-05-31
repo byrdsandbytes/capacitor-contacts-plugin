@@ -1,6 +1,8 @@
 declare module "@capacitor/core" {
   interface PluginRegistry {
     CapContacts: CapContactsPlugin;
+    CapContactsPhoneContact: Contact;
+    CapContactsPermissionStatus: PermissionStatus;
   }
 }
 
