@@ -1,5 +1,5 @@
 import { WebPlugin } from '@capacitor/core';
-import { CapContactsPlugin } from './definitions';
+import { CapContactsPlugin, PermissionStatus, Contact } from './definitions';
 
 export class CapContactsWeb extends WebPlugin implements CapContactsPlugin {
   constructor() {
@@ -9,20 +9,12 @@ export class CapContactsWeb extends WebPlugin implements CapContactsPlugin {
     });
   }
 
-  async echo(options: { value: string }): Promise<{value: string}> {
-    console.log('ECHO', options);
-    return options;
+  async getPermissions(): Promise<PermissionStatus> {
+    throw new Error('getPermission not available');
   }
 
-  async getPermissions(): Promise<any> {
-    console.log("GET PERMISSIONS")
-    return
-  }
-
-  async getContacts(): Promise<{contacts: Array<any>}> {
-    console.log("GET CONTACTS")
-    return
-
+  async getContacts(): Promise<{contacts: Contact[]}> {
+    throw new Error('getContacts not available');
   }
 
 

@@ -1,13 +1,26 @@
 declare module "@capacitor/core" {
   interface PluginRegistry {
     CapContacts: CapContactsPlugin;
+    CapContactsPhoneContact: Contact;
+    CapContactsPermissionStatus: PermissionStatus;
   }
 }
 
+export interface PermissionStatus {
+  granted: boolean;
+}
+
+export interface Contact {
+  contactId: string;
+  displayName?: string;
+  phoneNumbers: string[];
+  emails: string[];
+  organizationName?: string;
+  organizationRole?: string;
+  birthday?: string;
+}
+
 export interface CapContactsPlugin {
-  echo(options: { value: string }): Promise<{value: string}>;
-  getPermissions(): Promise<any>;
-  getContacts(): Promise<{
-      contacts: Array<any>;
-  }>;
+  getPermissions(): Promise<PermissionStatus>;
+  getContacts(): Promise<{contacts: Contact[]}>;
 }

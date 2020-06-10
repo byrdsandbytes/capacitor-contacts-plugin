@@ -26,7 +26,6 @@ public class CapContacts extends Plugin {
     public static final String CONTACT_ID = "contactId";
     public static final String EMAILS = "emails";
     public static final String PHONE_NUMBERS = "phoneNumbers";
-    public static final String LOOKUP_KEY = "lookupKey";
     public static final String DISPLAY_NAME = "displayName";
     public static final String ORGANIZATION_NAME = "organizationName";
     public static final String ORGANIZATION_ROLE = "organizationRole";
@@ -38,6 +37,7 @@ public class CapContacts extends Plugin {
             requestPermissions(call);
         } else {
             JSObject result = new JSObject();
+            result.put("granted", true);
             call.success(result);
         }
     }
@@ -47,10 +47,14 @@ public class CapContacts extends Plugin {
         super.handleRequestPermissionsResult(requestCode, permissions, grantResults);
 
         PluginCall savedCall = getSavedCall();
+        JSObject result = new JSObject();
+
         if (!hasRequiredPermissions()) {
-            savedCall.error("Permissions not granted.");
+            result.put("granted", false);
+            savedCall.success(result);
         } else {
-            savedCall.success();
+            result.put("granted", true);
+            savedCall.success(result);
         }
     }
 
@@ -67,7 +71,6 @@ public class CapContacts extends Plugin {
             JSObject jsContact = new JSObject();
             String contactId = dataCursor.getString(dataCursor.getColumnIndex(ContactsContract.Contacts._ID));
             jsContact.put(CONTACT_ID, contactId);
-            jsContact.put(LOOKUP_KEY, dataCursor.getString(dataCursor.getColumnIndex(ContactsContract.Contacts.LOOKUP_KEY)));
             jsContact.put(DISPLAY_NAME, dataCursor.getString(dataCursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME_PRIMARY)));
 
             addOrganization(jsContact);
@@ -223,7 +226,7 @@ public class CapContacts extends Plugin {
 
     @PluginMethod()
     public void deleteContact(PluginCall call) {
-        Uri uri = Uri.withAppendedPath(ContactsContract.Contacts.CONTENT_LOOKUP_URI, call.getString(LOOKUP_KEY));
+        Uri uri = Uri.withAppendedPath(ContactsContract.Contacts.CONTENT_LOOKUP_URI, call.getString(CONTACT_ID));
         getContext().getContentResolver().delete(uri, null, null);
 
         JSObject result = new JSObject();
