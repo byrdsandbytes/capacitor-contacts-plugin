@@ -17,12 +17,19 @@ $RECYCLE.BIN/
 log.txt
 npm-debug.log*
 
+android/build
+android/.gradle
+android/.settings
+android/.classpath
+android/.project
+
 /.idea
 /.ionic
 /.sass-cache
 /.sourcemaps
 /.versions
 /.vscode
+/build/
 /coverage
 /dist
 /node_modules

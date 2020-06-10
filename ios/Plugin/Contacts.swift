@@ -10,7 +10,7 @@ import Foundation
 import Contacts
 
 class Contacts {
-    class func getContactFromCNContact() -> [CNContact] {
+    class func getContactFromCNContact() throws -> [CNContact] {
 
         let contactStore = CNContactStore()
         let keysToFetch = [
@@ -24,11 +24,8 @@ class Contacts {
 
         //Get all the containers
         var allContainers: [CNContainer] = []
-        do {
-            allContainers = try contactStore.containers(matching: nil)
-        } catch {
-            print("Error fetching containers")
-        }
+        allContainers = try contactStore.containers(matching: nil)
+
 
         var results: [CNContact] = []
 
@@ -37,13 +34,8 @@ class Contacts {
 
             let fetchPredicate = CNContact.predicateForContactsInContainer(withIdentifier: container.identifier)
 
-            do {
-                let containerResults = try contactStore.unifiedContacts(matching: fetchPredicate, keysToFetch: keysToFetch as! [CNKeyDescriptor])
-                results.append(contentsOf: containerResults)
-
-            } catch {
-                print("Error fetching results for container")
-            }
+            let containerResults = try contactStore.unifiedContacts(matching: fetchPredicate, keysToFetch: keysToFetch as! [CNKeyDescriptor])
+            results.append(contentsOf: containerResults)
         }
 
         return results
