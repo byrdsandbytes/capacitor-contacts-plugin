@@ -158,7 +158,7 @@ import ch.byrds.capacitorContacts.CapContacts;
 -Idrimi (Jonathan Gerber)
 
 ## License
-MIT
+GPL v3
 ## Acknowledgments
 
 

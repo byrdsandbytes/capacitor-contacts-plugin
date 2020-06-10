@@ -11,7 +11,7 @@
     "prepublishOnly": "npm run build"
   },
   "author": "Byrds & Bytes Gmbh / Idrimi / Jonathan Gerber",
-  "license": "MIT",
+  "license": "GPLv3",
   "dependencies": {
     "@capacitor/core": "latest"
   },
