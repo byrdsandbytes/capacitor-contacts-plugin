@@ -53,9 +53,8 @@ You have the following Methods available:
 
 ```
 export interface CapContactsPlugin {
-  echo(options: { value: string }): Promise<{value: string}>;
-  getPermissions(): Promise<any>;
-  getContacts(): Promise<{ contacts: Array<any> }>;
+  getPermissions(): Promise<PermissionStatus>;
+  getContacts(): Promise<{contacts: Contact[]}>;
 }
 ```
 If you're considering to use this plugin you most likely want to retrive contatacts probably want to retrive a users contacts. Here's how I do that: 
@@ -83,6 +82,23 @@ That's it. Do Whatever you want with the retrived contacts now result now.
 If you're trying to build something like "contacts matching" based on phone numbers i recommend using google libphonenumber: https://www.npmjs.com/package/google-libphonenumber
 
 In order to match them properly you need to format them before you can match or store them properly.
+
+### Interfaces
+`````
+export interface PermissionStatus {
+  granted: boolean;
+}
+
+export interface Contact {
+  contactId: string;
+  displayName?: string;
+  phoneNumbers: string[];
+  emails: string[];
+  organizationName?: string;
+  organizationRole?: string;
+  birthday?: string;
+}
+`````
 
 
 ## iOS Notes
