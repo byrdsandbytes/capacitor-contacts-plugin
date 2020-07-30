@@ -69,7 +69,7 @@ public class CapContacts extends Plugin {
                 null);
         while (dataCursor.moveToNext()) {
             JSObject jsContact = new JSObject();
-            String contactId = dataCursor.getString(dataCursor.getColumnIndex(ContactsContract.Contacts._ID));
+            String contactId = dataCursor.getString(dataCursor.getColumnIndex(ContactsContract.Contacts.LOOKUP_KEY));
             jsContact.put(CONTACT_ID, contactId);
             jsContact.put(DISPLAY_NAME, dataCursor.getString(dataCursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME_PRIMARY)));
 
